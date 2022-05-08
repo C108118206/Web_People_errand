@@ -61,6 +61,7 @@
         overflow: auto;
         white-space: nowrap;
     }
+
 </style>
 <div class="main-content">
     <section class="section">
@@ -229,10 +230,9 @@
                                                         <div class="badge badge-danger">拒絕</div>
                                                     </td>
                                                 }
-                                                <td class="rowBorderEnd">
-                                                    <a href="/LeaveRecords/Edit?id=@pass_leaverecord.LeaveRecordId" class="btn2 btn2-primary btn2-action" data-toggle="tooltip" title="Edit"><i class="bi-pencil-square" style="color: #68A3FC;"></i></a>
-                                                    @*<button class="btn btn-danger btn-action" type="submit"><i class="bi-trash"></i></button>*@
-                                                </td>
+                                            <td class="rowBorderEnd">
+                                                <button type="button" id="editbutton" class="btn2 btn2-primary btn2-action" onclick=" window.open('/LeaveRecords/Edit?id=@pass_leaverecord.LeaveRecordId','_blank')"><i id="editimage" class="bi-pencil-square" style="color: #68A3FC;"></i></button>
+                                            </td>
                                             </tr>
 
                                         }
