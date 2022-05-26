@@ -116,7 +116,7 @@ namespace AttendanceManagement.Models
             {
                 MailMessage mail = new MailMessage();
                 //前面是發信email後面是顯示的名稱
-                mail.From = new MailAddress("C108118221@nkust.edu.tw", "差勤打卡");
+                mail.From = new MailAddress("like3yy@gmail.com", "差勤打卡");
 
                 //收信者email
                 mail.To.Add(to_email);
@@ -137,7 +137,7 @@ namespace AttendanceManagement.Models
                 SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
 
                 //您在gmail的帳號密碼
-                MySmtp.Credentials = new System.Net.NetworkCredential("like3yy@gmail.com", "nkust.edu.tw");
+                MySmtp.Credentials = new System.Net.NetworkCredential("like3yy@gmail.com", "ekwxscpgiylihnvk");
 
                 //開啟ssl
                 MySmtp.EnableSsl = true;
