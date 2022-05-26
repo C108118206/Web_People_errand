@@ -146,11 +146,11 @@ namespace AttendanceManagement.Controllers
                 string manager_email = passEmployees[passEmployees.FindIndex(item => item.HashAccount.Equals(Session["hash_account"]))].Email;
                 string manager_name = passEmployees[passEmployees.FindIndex(item => item.HashAccount.Equals(Session["hash_account"]))].Name;
                 
-                await Models.HttpResponse.sendGmailAsync(email, "差勤打卡提升後台管理員通知", $"<h1>您好!您已被邀請成為差勤打卡後台管理員</h1><p>請於三天內至以下網址設定您的管理員密碼，逾期則提升管理員失敗。</p><p><a href='http://163.18.110.102/PasswordSetting/index?key={managerkey}'>http://163.18.110.102/PasswordSetting/index?key={managerkey}</a></p><p>審核人：{manager_name}</p><p>聯絡信箱：{manager_email}</p>");
+                await Models.HttpResponse.sendGmailAsync(email, "差勤打卡提升後台管理員通知", $"<h1>您好!您已被邀請成為差勤打卡後台管理員</h1><p>請於三天內至以下網址設定您的管理員密碼，逾期則提升管理員失敗。</p><p><a href='{Models.HttpResponse.Web_url}/PasswordSetting/index?key={managerkey}'>{Models.HttpResponse.Web_url}/PasswordSetting/index?key={managerkey}</a></p><p>審核人：{manager_name}</p><p>聯絡信箱：{manager_email}</p>");
             }
             else
             {
-                await Models.HttpResponse.sendGmailAsync(email, "差勤打卡提升後台管理員通知", $"<h1>您好!您已被邀請成為差勤打卡後台管理員</h1><p>請於三天內至以下網址設定您的管理員密碼，逾期則提升管理員失敗。</p><p><a href='http://163.18.110.102/PasswordSetting/index?key={managerkey}'>http://163.18.110.102/PasswordSetting/index?key={managerkey}</a></p>");
+                await Models.HttpResponse.sendGmailAsync(email, "差勤打卡提升後台管理員通知", $"<h1>您好!您已被邀請成為差勤打卡後台管理員</h1><p>請於三天內至以下網址設定您的管理員密碼，逾期則提升管理員失敗。</p><p><a href='{Models.HttpResponse.Web_url}/PasswordSetting/index?key={managerkey}'>{Models.HttpResponse.Web_url}/PasswordSetting/index?key={managerkey}</a></p>");
             }
 
             string result = "已發送提升管理員請求至員工信箱！若員工三天內未回覆提升請求，則提升管理員失敗，請重新邀請成為管理員。";

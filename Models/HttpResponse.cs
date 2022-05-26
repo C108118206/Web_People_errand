@@ -12,7 +12,8 @@ namespace AttendanceManagement.Models
     {
         public static HttpClient client = new HttpClient();
         public static HttpResponseMessage response = new HttpResponseMessage();
-        public static readonly string url = "http://163.18.110.100:5000/api/"; //主機的URL
+        public static readonly string Web_url = "http://60.249.202.153:8082"; //Web主機的URL
+        public static readonly string url = "http://60.249.202.153:7000/api/"; //主機的URL
         public static readonly string CompanyGetCompanyHash = "Companies/Get_CompanyHash?"; //取得公司編號
         public static readonly string CompanyGetCompanyAddress = "Companies/Get_CompanyAddress?company_hash="; //取得公司地址
         public static readonly string CompanyEditCompanyAddress = "Companies/Update_CompanyAddress"; //(Put)修改公司地址

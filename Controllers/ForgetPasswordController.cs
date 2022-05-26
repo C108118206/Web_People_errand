@@ -26,7 +26,7 @@ namespace AttendanceManagement.Controllers
             {
                 string managerkey = await CompanyManagerModel.GetManagerKey(managerhash);
 
-                await Models.HttpResponse.sendGmailAsync(email, "差勤打卡管理員忘記密碼", $"<h1>您好!請問您忘記密碼了嗎?</h1><p>請於三天內至以下網址重新設定您的管理員密碼，逾期則設定失敗。</p><p><a href='http://163.18.110.102/PasswordSetting/index?key={managerkey}'>http://163.18.110.102/PasswordSetting/index?key={managerkey}</a></p>");
+                await Models.HttpResponse.sendGmailAsync(email, "差勤打卡管理員忘記密碼", $"<h1>您好!請問您忘記密碼了嗎?</h1><p>請於三天內至以下網址重新設定您的管理員密碼，逾期則設定失敗。</p><p><a href='{Models.HttpResponse.Web_url}/PasswordSetting/index?key={managerkey}'>{Models.HttpResponse.Web_url}/PasswordSetting/index?key={managerkey}</a></p>");
                 return Content($"<script>alert('已發送設定密碼之郵件至您的信箱，請至信箱內查看。');window.location='/Account/index';</script>");
             }
             else
